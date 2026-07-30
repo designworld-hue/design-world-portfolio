@@ -1,0 +1,42 @@
+{
+  "summary": "Verified all 4 pre-publish changes plus contact-form regression on the Design World portfolio. Frontend loads cleanly and every targeted change passes.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_results": {
+    "CHANGE1_about_text": {
+      "status": "PASS",
+      "details": "About #about paragraph contains 'Since founding Design World in January 2023...'. 'January 2023' present on page. Phrase '8 years' / 'over 8 years of experience' NOT present anywhere."
+    },
+    "CHANGE2_default_whatsapp_message": {
+      "status": "PASS",
+      "details": "Found 7 wa.me anchors on the page (Navbar Let's Talk, Hero Chat on WhatsApp [hero-whatsapp-cta], DesignProcess 'Start Your Project Today' in #process, FAQ 'Contact Us on WhatsApp', Contact WhatsApp info card in #contact, Footer WhatsApp icon, Footer phone link). All 7 point to https://wa.me/919322994747 and, after URL-decoding the text param, all produce EXACTLY:\n'Hello Vivek,\\nI visited your Design World portfolio website and I\\'m interested in your graphic design services.\\nI\\'d like to discuss my project with you.'\nThe floating WhatsApp button [floating-whatsapp-button] uses window.open in click handler and was verified via the WHATSAPP_URL constant (same href pattern generated in identical wa.me anchors). Apostrophes are correctly URL-encoded as %27."
+    },
+    "CHANGE3_hero_heading_typography": {
+      "status": "PASS",
+      "details": "Hero heading is split across 3 <h1> blocks inside #home whose combined innerText is exactly 'Creative Designs That Build Powerful Brands'. Each h1 has line-height:96px, height 100-104px, overflow:visible. Descender of 'g' in 'Designs' is not clipped (block height 100px exceeds line-height 96px and overflow is visible)."
+    },
+    "CHANGE4_hero_stats": {
+      "status": "PASS",
+      "details": "Hero #home contains all four new stats: '250+ Projects Completed', '120+ Happy Clients', '3+ Years Experience', '100% Satisfaction Rate'. Old values '500+', '200+', and '8+' are NOT present in the Hero section."
+    },
+    "REGRESSION_contact_form": {
+      "status": "PASS",
+      "details": "Filling contact-name-input='Test User', contact-email-input='test@example.com', contact-phone-input='9999999999', contact-message-input='I want a logo design' and clicking contact-submit-button triggers window.open with https://wa.me/919322994747?text=... Decoded message begins with 'Hi Vivek,' and includes 'My Name:', 'My Email:', 'My Phone:', 'Project Details:' sections with the entered values. Empty submit (with HTML5 required disabled) displays sonner toast 'Missing Information — Please fill in all required fields.' In normal browser use, HTML5 required attributes also prevent submission natively before the toast, which is acceptable dual protection."
+    }
+  },
+  "test_report_links": [],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Hero H1 is split into 3 separate <h1> elements. Semantically a page should have a single h1; consider using a single <h1> with <span> line breaks so the accessible name reads as one heading (SEO/a11y polish, not a bug)."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (skipped per request)", "frontend": "100%"},
+  "seed_data_creation": "None",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "All 4 pre-publish changes (About Jan 2023 copy, default WhatsApp message across 7 anchors, Hero heading typography, new Hero stats 250+/120+/3+/100%) and the contact-form regression are verified passing on preview URL. WHATSAPP_URL constant in src/lib/whatsapp.js is the single source of truth; if the message ever changes, all 7 anchor sites update together."
+}
