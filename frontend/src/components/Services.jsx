@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Palette, Package, Printer, Share2, FileText, Smartphone, CreditCard, Tag, Heart, TrendingUp } from 'lucide-react';
+import { Palette, Package, Printer, Share2, FileText, Smartphone, CreditCard, Tag, Heart, TrendingUp, Globe } from 'lucide-react';
 
 export const Services = () => {
   const ref = useRef(null);
@@ -67,7 +67,13 @@ export const Services = () => {
       description: 'Strategic designs that drive conversions',
       color: 'from-orange-500 to-orange-600',
     },
-  ];
+    {
+      icon: Globe,
+      title: 'Website Design & Development',
+      description: 'Modern, responsive and SEO-friendly websites for businesses and brands.',
+      color: 'from-cyan-500 to-blue-600',
+   },
+   ];
 
   return (
     <section id="services" ref={ref} className="relative py-32 bg-white overflow-hidden">
