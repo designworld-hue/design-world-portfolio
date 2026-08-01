@@ -126,23 +126,28 @@ export const About = () => {
               className="space-y-5 text-lg text-gray-600 leading-relaxed"
             >
               <p>
-                Hi, I'm <Nav>Vivekanand Garje</Nav>, founder of <Red>Design World</Red>. Since
-                launching <Red>Design World</Red> in <Nav>January 2023</Nav>, I've been helping
-                businesses create impactful brand identities through <Red>graphic design</Red>,{' '}
-                <Nav>branding</Nav>, <Red>packaging</Red>, <Nav>print design</Nav>, and{' '}
-                <Red>marketing solutions</Red>.
-              </p>
-              <p>
-                Based in <Nav>Kharghar, Navi Mumbai</Nav>, Design World specializes in{' '}
-                <Red>Branding</Red>, <Red>Packaging</Red>, <Red>Print Design</Red>, and{' '}
-                <Red>Social Media Design</Red>. Every project is an opportunity to create
-                something extraordinary.
-              </p>
-              <p>
-                My mission is simple: deliver designs that not only look beautiful but also drive
-                results. Whether you're a startup or an established business, I'm here to bring
-                your vision to life.
-              </p>
+  Hi, I'm <Nav>Vivekanand Garje</Nav>, founder of <Red>Design World</Red>. Since
+  launching <Red>Design World</Red> in <Nav>January 2023</Nav>, I've been helping
+  businesses build impactful brands through <Red>graphic design</Red>,{" "}
+  <Nav>branding</Nav>, <Red>packaging</Red>, <Nav>print design</Nav>,{" "}
+  <Red>website design & development</Red>, and{" "}
+  <Red>marketing solutions</Red>.
+</p>
+
+<p>
+  Based in <Nav>Kharghar, Navi Mumbai</Nav>, Design World specializes in{" "}
+  <Red>Branding</Red>, <Red>Packaging</Red>, <Red>Print Design</Red>,{" "}
+  <Red>Social Media Design</Red>, and{" "}
+  <Red>Website Design & Development</Red>. Every project is an opportunity to
+  create innovative solutions that help businesses grow and stand out.
+</p>
+
+<p>
+  My mission is simple: to deliver creative solutions that not only look
+  exceptional but also help businesses grow. Whether you need a memorable brand
+  identity, high-quality print materials, engaging marketing creatives, or a
+  modern business website, I'm here to bring your vision to life.
+</p>
             </motion.div>
 
             {/* Feature grid */}
