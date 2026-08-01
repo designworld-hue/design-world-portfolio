@@ -84,7 +84,7 @@ export const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute -bottom-8 left-4 right-4 sm:left-8 sm:right-8 bg-white/60 backdrop-blur-2xl rounded-2xl p-6 shadow-2xl shadow-black/20 border border-white/60"
+              className="absolute -bottom-12 left-4 right-4 sm:left-8 sm:right-8 bg-white/60 backdrop-blur-2xl rounded-2xl p-6 shadow-2xl shadow-black/20 border border-white/60"
             >
               <div className="flex items-start justify-between">
                 <div>
