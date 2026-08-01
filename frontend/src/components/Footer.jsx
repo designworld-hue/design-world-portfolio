@@ -129,12 +129,18 @@ export const Footer = () => {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © {currentYear} Design World. All rights reserved.
-            </p>
-            <p className="text-gray-400 text-sm">
-              Designed & Developed with{' '}
-              <span className="text-red-400">❤</span> by Design World
-            </p>
+  © {currentYear} Design World. All Rights Reserved.
+</p>
+
+<p className="text-gray-400 text-sm">
+  Designed & Developed by{" "}
+  <a
+    href="/"
+    className="font-semibold text-white hover:text-red-400 transition-colors"
+  >
+    Design World
+  </a>
+</p>
           </div>
         </div>
       </div>
