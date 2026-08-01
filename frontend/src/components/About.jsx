@@ -128,10 +128,10 @@ export const About = () => {
               <p>
   Hi, I'm <Nav>Vivekanand Garje</Nav>, founder of <Red>Design World</Red>. Since
   launching <Red>Design World</Red> in <Nav>January 2023</Nav>, I've been helping
-  businesses build impactful brands through <Red>graphic design</Red>,{" "}
-  <Nav>branding</Nav>, <Red>packaging</Red>, <Nav>print design</Nav>,{" "}
-  <Red>website design & development</Red>, and{" "}
-  <Red>marketing solutions</Red>.
+  businesses build impactful brands through <Red>Graphic Design</Red>,{" "}
+  <Nav>Branding</Nav>, <Red>Packaging</Red>, <Nav>Print Design</Nav>,{" "}
+  <Red>Website Design & Development</Red>, and{" "}
+  <Red>Marketing Solutions</Red>.
 </p>
 
 <p>
