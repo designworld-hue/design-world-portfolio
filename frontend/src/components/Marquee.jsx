@@ -1,11 +1,13 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export const Marquee = () => {
-  const text = "CREATIVE DESIGN • BRANDING • PACKAGING • PRINT DESIGN • SOCIAL MEDIA • ";
-  
+  const { t } = useTranslation();
+
+  const text = t("marquee.text");
+
   return (
     <div className="relative py-8 bg-gradient-to-r from-red-600 via-red-700 to-red-600 overflow-hidden">
-      {/* Animated Marquee */}
       <div className="flex whitespace-nowrap">
         <motion.div
           animate={{ x: [0, -1000] }}

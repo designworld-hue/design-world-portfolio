@@ -1,79 +1,81 @@
+import { useTranslation } from "react-i18next";
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Palette, Package, Printer, Share2, FileText, Smartphone, CreditCard, Tag, Heart, TrendingUp, Globe } from 'lucide-react';
 
 export const Services = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const services = [
-    {
-      icon: Palette,
-      title: 'Logo Design',
-      description: 'Unique, memorable logos that define your brand identity',
-      color: 'from-red-500 to-red-600',
-    },
-    {
-      icon: Package,
-      title: 'Brand Identity',
-      description: 'Complete branding solutions from concept to execution',
-      color: 'from-blue-500 to-blue-600',
-    },
-    {
-      icon: Tag,
-      title: 'Packaging Design',
-      description: 'Eye-catching packaging that sells your product',
-      color: 'from-purple-500 to-purple-600',
-    },
-    {
-      icon: Share2,
-      title: 'Social Media Design',
-      description: 'Engaging graphics for all social platforms',
-      color: 'from-pink-500 to-pink-600',
-    },
-    {
-      icon: Printer,
-      title: 'Print Design',
-      description: 'Professional print materials that make an impact',
-      color: 'from-green-500 to-green-600',
-    },
-    {
-      icon: FileText,
-      title: 'Brochure & Flyer',
-      description: 'Informative designs that capture attention',
-      color: 'from-yellow-500 to-yellow-600',
-    },
-    {
-      icon: CreditCard,
-      title: 'Business Cards',
-      description: 'Premium cards that leave lasting impressions',
-      color: 'from-indigo-500 to-indigo-600',
-    },
-    {
-      icon: Smartphone,
-      title: 'Product Labels',
-      description: 'Custom labels that elevate your products',
-      color: 'from-teal-500 to-teal-600',
-    },
-    {
-      icon: Heart,
-      title: 'Wedding Invitations',
-      description: 'Beautiful designs for your special day',
-      color: 'from-rose-500 to-rose-600',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Marketing Creatives',
-      description: 'Strategic designs that drive conversions',
-      color: 'from-orange-500 to-orange-600',
-    },
-    {
-      icon: Globe,
-      title: 'Website Design & Development',
-      description: 'Modern, responsive and SEO-friendly websites for businesses and brands.',
-      color: 'from-cyan-500 to-blue-600',
-   },
-   ];
+  {
+    icon: Palette,
+    title: t("services.items.logo.title"),
+    description: t("services.items.logo.description"),
+    color: "from-red-500 to-red-600",
+  },
+  {
+    icon: Package,
+    title: t("services.items.brand.title"),
+    description: t("services.items.brand.description"),
+    color: "from-blue-500 to-blue-600",
+  },
+  {
+    icon: Tag,
+    title: t("services.items.packaging.title"),
+    description: t("services.items.packaging.description"),
+    color: "from-purple-500 to-purple-600",
+  },
+  {
+    icon: Share2,
+    title: t("services.items.social.title"),
+    description: t("services.items.social.description"),
+    color: "from-pink-500 to-pink-600",
+  },
+  {
+    icon: Printer,
+    title: t("services.items.print.title"),
+    description: t("services.items.print.description"),
+    color: "from-green-500 to-green-600",
+  },
+  {
+    icon: FileText,
+    title: t("services.items.flyer.title"),
+    description: t("services.items.flyer.description"),
+    color: "from-yellow-500 to-yellow-600",
+  },
+  {
+    icon: CreditCard,
+    title: t("services.items.cards.title"),
+    description: t("services.items.cards.description"),
+    color: "from-indigo-500 to-indigo-600",
+  },
+  {
+    icon: Smartphone,
+    title: t("services.items.labels.title"),
+    description: t("services.items.labels.description"),
+    color: "from-teal-500 to-teal-600",
+  },
+  {
+    icon: Heart,
+    title: t("services.items.wedding.title"),
+    description: t("services.items.wedding.description"),
+    color: "from-rose-500 to-rose-600",
+  },
+  {
+    icon: TrendingUp,
+    title: t("services.items.marketing.title"),
+    description: t("services.items.marketing.description"),
+    color: "from-orange-500 to-orange-600",
+  },
+  {
+  icon: Globe,
+  title: t("services.items.website.title"),
+  description: t("services.items.website.description"),
+  color: "from-sky-500 to-blue-600",
+ }
+];
 
   return (
     <section id="services" ref={ref} className="relative py-32 bg-white overflow-hidden">
@@ -90,13 +92,13 @@ export const Services = () => {
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-2 bg-red-50 rounded-full mb-4">
-            <span className="text-sm font-semibold text-red-600">What We Offer</span>
+            <span className="text-sm font-semibold text-red-600">{t("services.badge")}</span>
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Our Services
+            {t("services.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive design solutions tailored to your business needs
+            {t("services.description")}
           </p>
         </motion.div>
 
@@ -132,7 +134,7 @@ export const Services = () => {
                 {/* Arrow on Hover */}
                 <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <span className="text-sm font-semibold text-red-600 flex items-center gap-2">
-                    Learn More
+                    {t("services.learnMore")}
                     <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

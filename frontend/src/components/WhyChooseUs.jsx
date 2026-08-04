@@ -1,33 +1,35 @@
+import { useTranslation } from "react-i18next";
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Target, Clock, Star, Users } from 'lucide-react';
 
 export const WhyChooseUs = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const reasons = [
-    {
-      icon: Star,
-      title: 'Creative Excellence',
-      description: 'Every design is crafted with creativity, passion, and attention to detail that sets your brand apart.',
-    },
-    {
-      icon: Target,
-      title: 'Results-Driven',
-      description: 'We don\'t just create beautiful designs—we create designs that achieve your business goals.',
-    },
-    {
-      icon: Clock,
-      title: 'Timely Delivery',
-      description: 'We respect deadlines and ensure your projects are delivered on time, every time.',
-    },
-    {
-      icon: Users,
-      title: 'Client-Focused Approach',
-      description: 'Your satisfaction is our priority. We work closely with you throughout the entire process.',
-    },
-  ];
+  {
+    icon: Star,
+    title: t("whyChoose.reasons.creative.title"),
+    description: t("whyChoose.reasons.creative.description"),
+  },
+  {
+    icon: Target,
+    title: t("whyChoose.reasons.results.title"),
+    description: t("whyChoose.reasons.results.description"),
+  },
+  {
+    icon: Clock,
+    title: t("whyChoose.reasons.delivery.title"),
+    description: t("whyChoose.reasons.delivery.description"),
+  },
+  {
+    icon: Users,
+    title: t("whyChoose.reasons.client.title"),
+    description: t("whyChoose.reasons.client.description"),
+  },
+];
 
   return (
     <section ref={ref} className="relative py-32 bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white overflow-hidden">
@@ -46,13 +48,13 @@ export const WhyChooseUs = () => {
           className="text-center mb-20"
         >
           <div className="inline-block px-4 py-2 bg-white/10 backdrop-blur-md rounded-full mb-4">
-            <span className="text-sm font-semibold text-red-400">Why Design World</span>
+            <span className="text-sm font-semibold text-red-400">{t("whyChoose.badge")}</span>
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold mb-6">
-            Why Choose Us?
+            {t("whyChoose.title")}
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            We combine creativity, strategy, and dedication to deliver exceptional design solutions
+            {t("whyChoose.description")}
           </p>
         </motion.div>
 
@@ -97,11 +99,11 @@ export const WhyChooseUs = () => {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8"
         >
           {[
-            { value: '250+', label: 'Projects Completed' },
-            { value: '120+', label: 'Happy Clients' },
-            { value: '3+', label: 'Years Experience' },
-            { value: '100%', label: 'Satisfaction Rate' },
-          ].map((stat, index) => (
+  { value: "250+", label: t("hero.stats.projects") },
+  { value: "120+", label: t("hero.stats.clients") },
+  { value: "3+", label: t("hero.stats.experience") },
+  { value: "100%", label: t("hero.stats.satisfaction") },
+].map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ scale: 0 }}

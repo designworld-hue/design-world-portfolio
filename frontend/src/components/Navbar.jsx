@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/whatsapp';
+import { useTranslation } from "react-i18next";
 
 export const Navbar = () => {
+  const { t, i18n } = useTranslation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,14 +18,28 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+
+  useEffect(() => {
+  const savedLanguage = localStorage.getItem("language");
+
+  if (savedLanguage) {
+    i18n.changeLanguage(savedLanguage);
+  }
+}, [i18n]);
+
+const changeLanguage = (lang) => {
+  i18n.changeLanguage(lang);
+  localStorage.setItem("language", lang);
+  setIsLanguageOpen(false);
+};
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Contact', href: '#contact' },
-  ];
+  { label: t("navbar.home"), href: "#home" },
+  { label: t("navbar.about"), href: "#about" },
+  { label: t("navbar.portfolio"), href: "#portfolio" },
+  { label: t("navbar.services"), href: "#services" },
+  { label: t("navbar.process"), href: "#process" },
+  { label: t("navbar.contact"), href: "#contact" },
+];
 
   return (
     <motion.nav
@@ -64,19 +81,54 @@ export const Navbar = () => {
             ))}
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <motion.a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
-            >
-              Let's Talk
-            </motion.a>
-          </div>
+          {/* Language + CTA */}
+<div className="hidden md:flex items-center gap-4">
+
+  <div className="relative">
+    <button
+      onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+      className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-full hover:bg-gray-50 transition"
+    >
+      <Globe size={18} />
+      <span>{i18n.language === "mr" ? "मराठी" : "English"}</span>
+      <ChevronDown size={16} />
+    </button>
+
+    {isLanguageOpen && (
+      <div className="absolute right-0 mt-2 w-44 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden">
+
+        <button
+  onClick={() => changeLanguage("en")}
+  className="flex items-center gap-2 w-full px-4 py-3 hover:bg-gray-50"
+>
+  <span>🇬🇧</span>
+  <span>English</span>
+</button>
+
+<button
+  onClick={() => changeLanguage("mr")}
+  className="flex items-center gap-2 w-full px-4 py-3 hover:bg-gray-50"
+>
+  <span>🇮🇳</span>
+  <span>मराठी</span>
+</button>
+
+      </div>
+    )}
+  </div>
+
+  <motion.a
+    href={WHATSAPP_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
+  >
+    Let's Talk
+  </motion.a>
+
+</div>
 
           {/* Mobile Menu Button */}
           <button

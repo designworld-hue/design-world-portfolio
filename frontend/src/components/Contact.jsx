@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Instagram, Send } from 'lucide-react';
@@ -5,6 +6,7 @@ import { toast } from 'sonner';
 import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../lib/whatsapp';
 
 export const Contact = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [formData, setFormData] = useState({
@@ -19,11 +21,11 @@ export const Contact = () => {
     
     // Validate
     if (!formData.name || !formData.email || !formData.message) {
-      toast.error('Missing Information', {
-        description: 'Please fill in all required fields.',
-      });
-      return;
-    }
+  toast.error(t("contact.toast.errorTitle"), {
+    description: t("contact.toast.errorDescription"),
+  });
+  return;
+}
 
     // Create WhatsApp message with the exact requested format
     const messageText = `Hi Vivek,
@@ -49,37 +51,38 @@ ${formData.message}`;
     // Reset form
     setFormData({ name: '', email: '', phone: '', message: '' });
     
-    toast.success('Redirecting to WhatsApp', {
-      description: 'Opening WhatsApp with your message...',
-    });
-  };
+   toast.success(t("contact.toast.successTitle"), {
+  description: t("contact.toast.successDescription"),
+});
 
-  const contactInfo = [
-    {
-      icon: MapPin,
-      title: 'Location',
-      value: 'Kharghar, Navi Mumbai, Maharashtra, India',
-      link: 'https://maps.google.com/?q=Kharghar,Navi+Mumbai',
-    },
-    {
-      icon: Phone,
-      title: 'WhatsApp',
-      value: '+91 9322994747',
-      link: WHATSAPP_URL,
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'designworld.print47@gmail.com',
-      link: 'mailto:designworld.print47@gmail.com',
-    },
-    {
-      icon: Instagram,
-      title: 'Instagram',
-      value: '@design.world_official',
-      link: 'https://instagram.com/design.world_official',
-    },
-  ];
+};
+
+const contactInfo = [
+  {
+    icon: MapPin,
+    title: t("contact.info.location.title"),
+    value: t("contact.info.location.value"),
+    link: "https://maps.google.com/?q=Kharghar,Navi+Mumbai",
+  },
+  {
+    icon: Phone,
+    title: t("contact.info.whatsapp.title"),
+    value: "+91 9322994747",
+    link: WHATSAPP_URL,
+  },
+  {
+    icon: Mail,
+    title: t("contact.info.email.title"),
+    value: "designworld.print47@gmail.com",
+    link: "mailto:designworld.print47@gmail.com",
+  },
+  {
+    icon: Instagram,
+    title: t("contact.info.instagram.title"),
+    value: "@design.world_official",
+    link: "https://instagram.com/design.world_official",
+  },
+];
 
   return (
     <section id="contact" ref={ref} className="relative py-32 bg-gradient-to-b from-gray-50 to-white">
@@ -112,10 +115,10 @@ ${formData.message}`;
           >
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Contact Information
+                {t("contact.infoTitle")}
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Reach out through any of these channels. We're always excited to hear about new projects!
+                {t("contact.infoDescription")}
               </p>
             </div>
 
@@ -128,7 +131,7 @@ ${formData.message}`;
               />
               <div>
                 <div className="text-white font-bold text-lg">Vivekanand Garje</div>
-                <div className="text-gray-300 text-sm">Founder & Creative Director</div>
+                <div className="text-gray-300 text-sm">{t("contact.founderRole")}</div>
               </div>
             </div>
 
@@ -190,7 +193,7 @@ ${formData.message}`;
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Name *
+                    {t("contact.form.name")}
                   </label>
                   <input
                     type="text"
@@ -198,14 +201,14 @@ ${formData.message}`;
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                    placeholder="John Doe"
+                    placeholder={t("contact.form.namePlaceholder")}
                     required
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email Address *
+                    {t("contact.form.email")}
                   </label>
                   <input
                     type="email"
@@ -220,7 +223,7 @@ ${formData.message}`;
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Phone Number
+                    {t("contact.form.phone")}
                   </label>
                   <input
                     type="tel"
@@ -228,13 +231,13 @@ ${formData.message}`;
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all"
-                    placeholder="+91 1234567890"
+                    placeholder={t("contact.form.phonePlaceholder")}
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
-                    Your Message *
+                    {t("contact.form.message")}
                   </label>
                   <textarea
                     value={formData.message}
@@ -242,7 +245,7 @@ ${formData.message}`;
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     rows={5}
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all resize-none"
-                    placeholder="Tell us about your project..."
+                    placeholder={t("contact.form.messagePlaceholder")}
                     required
                   />
                 </div>
@@ -254,7 +257,7 @@ ${formData.message}`;
                   whileTap={{ scale: 0.98 }}
                   className="w-full px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-xl font-semibold shadow-xl shadow-red-500/30 hover:shadow-2xl hover:shadow-red-500/40 transition-all duration-300 flex items-center justify-center gap-2"
                 >
-                  Send Message via WhatsApp
+                  {t("contact.form.button")}
                   <Send className="w-5 h-5" />
                 </motion.button>
               </div>

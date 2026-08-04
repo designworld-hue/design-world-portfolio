@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles, Palette, Package, Printer, Share2 } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/whatsapp';
 
 export const Hero = () => {
+  const { t } = useTranslation();
   const { scrollY } = useScroll();
   const yBlob1 = useTransform(scrollY, [0, 500], [0, 120]);
   const yBlob2 = useTransform(scrollY, [0, 500], [0, -90]);
@@ -26,11 +28,11 @@ export const Hero = () => {
   };
 
   const services = [
-    { icon: Palette, label: 'Logo Design' },
-    { icon: Package, label: 'Brand Identity' },
-    { icon: Printer, label: 'Print Design' },
-    { icon: Share2, label: 'Social Media' },
-  ];
+  { icon: Palette, label: t("hero.services.logo") },
+  { icon: Package, label: t("hero.services.brand") },
+  { icon: Printer, label: t("hero.services.print") },
+  { icon: Share2, label: t("hero.services.social") },
+];
 
   return (
     <section
@@ -71,7 +73,7 @@ export const Hero = () => {
         >
           <Sparkles className="w-4 h-4 text-red-600" />
           <span className="text-sm font-semibold text-gray-700 tracking-wide">
-            Premium Graphic Design Studio · Navi Mumbai
+            {t("hero.badge")}
           </span>
         </motion.div>
 
@@ -79,14 +81,14 @@ export const Hero = () => {
         <h1 className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1.2] tracking-tight mb-8">
           <span className="block overflow-hidden py-1">
             <motion.span variants={lineVariants} className="block text-gray-900 pb-1">
-              Creative Designs
+              {t("hero.title1")}
             </motion.span>
           </span>
           <span className="block overflow-hidden py-1">
             <motion.span variants={lineVariants} className="block pb-1">
-              <span className="text-gray-900">That Build </span>
+              <span className="text-gray-900">{t("hero.title2")} </span>
               <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
-                Powerful
+                {t("hero.title3")}
               </span>
             </motion.span>
           </span>
@@ -95,7 +97,7 @@ export const Hero = () => {
               variants={lineVariants}
               className="block bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent pb-2"
             >
-              Brands
+              {t("hero.title4")}
             </motion.span>
           </span>
         </h1>
@@ -105,8 +107,7 @@ export const Hero = () => {
           variants={lineVariants}
           className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto mb-10"
         >
-          Design World helps businesses create memorable brand identities through creative
-          graphic design, branding, packaging, print solutions, and marketing creatives.
+          {t("hero.description")}
         </motion.p>
 
         {/* CTA Buttons */}
@@ -121,9 +122,9 @@ export const Hero = () => {
             data-testid="hero-whatsapp-cta"
             whileHover={{ scale: 1.05, boxShadow: '0 20px 60px rgba(220, 38, 38, 0.4)' }}
             whileTap={{ scale: 0.95 }}
-            className="group px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-semibold shadow-2xl shadow-red-500/40 flex items-center justify-center space-x-2 transition-all duration-300 w-full sm:w-auto"
+            className="group px-10 py-4 min-w-[280px] bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-semibold shadow-2xl shadow-red-500/40 flex items-center justify-center space-x-2 transition-all duration-300 w-full sm:w-auto"
           >
-            <span>Chat on WhatsApp</span>
+            <span>{t("hero.whatsapp")}</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
           <motion.a
@@ -133,7 +134,7 @@ export const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-white/80 backdrop-blur-xl text-gray-900 rounded-full font-semibold border-2 border-gray-200 hover:border-gray-900 shadow-lg hover:shadow-xl transition-all duration-300 text-center w-full sm:w-auto"
           >
-            View Portfolio
+            {t("hero.portfolio")}
           </motion.a>
         </motion.div>
 
@@ -168,10 +169,10 @@ export const Hero = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mt-16 pt-10 border-t border-gray-200/70"
         >
           {[
-            { value: '250+', label: 'Projects Completed' },
-            { value: '120+', label: 'Happy Clients' },
-            { value: '3+', label: 'Years Experience' },
-            { value: '100%', label: 'Satisfaction Rate' },
+            { value: '250+', label: 't("hero.stats.projects")' },
+            { value: '120+', label: 't("hero.stats.clients")' },
+            { value: '3+', label: 't("hero.stats.experience")' },
+            { value: '100%', label: 't("hero.stats.satisfaction")' },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

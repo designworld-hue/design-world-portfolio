@@ -1,0 +1,333 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "process": "Process",
+    "contact": "Contact",
+    "letsTalk": "Let's Talk"
+  },
+
+  "hero": {
+    "badge": "Premium Graphic Design Studio · Navi Mumbai",
+
+    "title1": "Creative Designs",
+    "title2": "That Build",
+    "title3": "Powerful",
+    "title4": "Brands",
+
+    "description": "Design World helps businesses create memorable brand identities through creative graphic design, branding, packaging, print solutions and marketing creatives.",
+
+    "whatsapp": "Chat on WhatsApp",
+    "portfolio": "View Portfolio",
+
+    "services": {
+      "logo": "Logo Design",
+      "brand": "Brand Identity",
+      "print": "Print Design",
+      "social": "Social Media"
+    },
+
+    "stats": {
+      "projects": "Projects Completed",
+      "clients": "Happy Clients",
+      "experience": "Years Experience",
+      "satisfaction": "Satisfaction Rate"
+    }
+  },
+
+  "marquee": {
+    "text": "CREATIVE DESIGN • BRANDING • PACKAGING • PRINT DESIGN • SOCIAL MEDIA •"
+  },
+    "about": {
+    "badge": "About Design World",
+
+    "title1": "Meet the Creative Mind Behind",
+    "title2": "Design World",
+
+    "founderRole": "Founder & Creative Graphic Designer",
+    "company": "Design World",
+    "location": "Kharghar, Navi Mumbai",
+
+    "features": {
+      "excellence": {
+        "title": "Excellence",
+        "description": "Award-winning designs that stand out"
+      },
+      "client": {
+        "title": "Client-Focused",
+        "description": "Your vision, our expertise"
+      },
+      "delivery": {
+        "title": "Fast Delivery",
+        "description": "Quality work, delivered on time"
+      },
+      "passion": {
+        "title": "Passion",
+        "description": "We love what we do, and it shows"
+      }
+    }
+  },
+
+  "services": {
+    "badge": "What We Offer",
+    "title": "Our Services",
+    "description": "Comprehensive design solutions tailored to your business needs",
+    "learnMore": "Learn More",
+
+    "items": {
+      "logo": {
+        "title": "Logo Design",
+        "description": "Unique, memorable logos that define your brand identity."
+      },
+      "brand": {
+        "title": "Brand Identity",
+        "description": "Complete branding solutions from concept to execution."
+      },
+      "packaging": {
+        "title": "Packaging Design",
+        "description": "Eye-catching packaging that sells your product."
+      },
+      "social": {
+        "title": "Social Media Design",
+        "description": "Creative social media graphics for every platform."
+      },
+      "print": {
+        "title": "Print Design",
+        "description": "Professional print materials with premium quality."
+      },
+      "flyer": {
+        "title": "Brochure & Flyer",
+        "description": "Creative brochures, flyers and marketing materials."
+      },
+      "cards": {
+        "title": "Business Cards",
+        "description": "Premium business cards that create a lasting impression."
+      },
+      "labels": {
+        "title": "Product Labels",
+        "description": "Professional label designs for every product."
+      },
+      "wedding": {
+        "title": "Wedding Invitations",
+        "description": "Elegant invitation cards for your special day."
+      },
+      "marketing": {
+        "title": "Marketing Creatives",
+        "description": "Creative marketing designs that boost your business."
+      },
+      "website": {
+        "title": "Website Design & Development",
+        "description": "Modern, responsive and SEO-friendly websites."
+      }
+    }
+  },
+    "portfolio": {
+    "badge": "Our Portfolio",
+    "title": "Featured Projects",
+    "description": "Explore some of our recent branding, packaging, print and digital design work.",
+
+    "categories": {
+      "all": "All",
+      "branding": "Branding",
+      "packaging": "Packaging",
+      "print": "Print",
+      "social": "Social Media"
+    },
+
+    "projects": {
+      "1": {
+        "title": "Luxury Brand Identity",
+        "description": "Premium branding package with logo and stationery."
+      },
+      "2": {
+        "title": "Cosmetic Packaging",
+        "description": "Creative packaging design for cosmetic products."
+      },
+      "3": {
+        "title": "Corporate Stationery",
+        "description": "Professional business stationery collection."
+      },
+      "4": {
+        "title": "Product Label Design",
+        "description": "Modern product label with premium appearance."
+      },
+      "5": {
+        "title": "Marketing Brochure",
+        "description": "Creative brochure for business promotions."
+      },
+      "6": {
+        "title": "Social Media Campaign",
+        "description": "Creative social media campaign design."
+      },
+      "7": {
+        "title": "Business Card Collection",
+        "description": "Elegant business card design collection."
+      },
+      "8": {
+        "title": "Premium Product Box",
+        "description": "Luxury packaging box design."
+      },
+      "9": {
+        "title": "Event Poster",
+        "description": "Professional event poster design."
+      }
+    }
+  },
+
+  "whyChoose": {
+    "badge": "Why Choose Us",
+    "title": "Why Businesses Choose Design World",
+    "description": "We combine creativity, strategy and experience to deliver designs that make an impact.",
+
+    "reasons": {
+      "creative": {
+        "title": "Creative Excellence",
+        "description": "Unique and modern designs tailored for your brand."
+      },
+      "results": {
+        "title": "Result Driven",
+        "description": "Designs focused on business growth and customer engagement."
+      },
+      "delivery": {
+        "title": "On-Time Delivery",
+        "description": "Projects completed within the committed timeline."
+      },
+      "client": {
+        "title": "Client Satisfaction",
+        "description": "Dedicated support with long-term client relationships."
+      }
+    }
+  },
+    "process": {
+    "badge": "Our Process",
+    "title": "Our Design Process",
+    "description": "A simple and effective workflow that transforms your ideas into impactful designs.",
+
+    "steps": {
+      "consultation": {
+        "title": "Consultation",
+        "description": "We understand your business goals, target audience and design requirements."
+      },
+      "research": {
+        "title": "Research",
+        "description": "We research your industry, competitors and current market trends."
+      },
+      "concept": {
+        "title": "Concept Development",
+        "description": "Creative concepts are prepared before moving to the final design."
+      },
+      "design": {
+        "title": "Design Creation",
+        "description": "Professional and visually appealing designs are created with attention to detail."
+      },
+      "revision": {
+        "title": "Revision",
+        "description": "We refine the design based on your valuable feedback."
+      },
+      "delivery": {
+        "title": "Final Delivery",
+        "description": "Receive all final files in high-quality print and digital formats."
+      }
+    },
+
+    "cta": "Start Your Project Today"
+  },
+
+  "faq": {
+    "badge": "Frequently Asked Questions",
+    "title": "Got Questions?",
+    "description": "Find answers to the most common questions about our design services.",
+
+    "items": {
+      "1": {
+        "question": "What design services do you offer?",
+        "answer": "We provide logo design, branding, packaging, print design, social media creatives, website design and many other creative solutions."
+      },
+      "2": {
+        "question": "How long does a project take?",
+        "answer": "Project duration depends on the complexity. Most projects are completed within a few days."
+      },
+      "3": {
+        "question": "Can I request revisions?",
+        "answer": "Yes. Revisions are included to ensure you are fully satisfied with the final design."
+      },
+      "4": {
+        "question": "Do you design for print and digital?",
+        "answer": "Yes. We create designs optimized for both digital and print use."
+      },
+      "5": {
+        "question": "How do I place an order?",
+        "answer": "Simply contact us through WhatsApp or our contact form."
+      },
+      "6": {
+        "question": "Which file formats will I receive?",
+        "answer": "You will receive JPG, PNG, PDF and other required source files."
+      },
+      "7": {
+        "question": "Do you provide website design?",
+        "answer": "Yes. We design modern, responsive business websites."
+      },
+      "8": {
+        "question": "Can you work with clients outside India?",
+        "answer": "Absolutely. We work with clients worldwide through online communication."
+      }
+    },
+
+    "cta": {
+      "title": "Still Have Questions?",
+      "description": "We're happy to help you with your project.",
+      "button": "Contact on WhatsApp"
+    }
+  },
+    "contact": {
+    "badge": "Get In Touch",
+    "title": "Let's Work Together",
+    "description": "Have a project in mind? Contact us today and let's create something amazing together.",
+
+    "info": {
+      "phone": "Phone",
+      "email": "Email",
+      "location": "Location"
+    },
+
+    "location": "Kharghar, Navi Mumbai, Maharashtra, India",
+
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "phone": "Phone Number",
+      "message": "Tell us about your project",
+      "button": "Send Message"
+    }
+  },
+
+  "footer": {
+    "description": "Creating memorable brand identities through creative graphic design, branding, packaging and marketing solutions.",
+
+    "quickLinks": "Quick Links",
+    "servicesTitle": "Services",
+    "contactTitle": "Contact",
+
+    "location": "Kharghar, Navi Mumbai, Maharashtra, India",
+
+    "services": {
+      "logo": "Logo Design",
+      "brand": "Brand Identity",
+      "packaging": "Packaging Design",
+      "social": "Social Media Design",
+      "print": "Print Design",
+      "cards": "Business Cards"
+    },
+
+    "copyright": "Design World. All Rights Reserved.",
+    "designed": "Designed & Developed with",
+    "company": "by Design World"
+  },
+
+  "whatsapp": {
+    "title": "Need help with your design?",
+    "description": "Chat with us on WhatsApp!"
+  }
+}

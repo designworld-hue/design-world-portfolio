@@ -1,9 +1,12 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState, useEffect } from 'react';
-import { MessageCircle, X } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/whatsapp';
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import { MessageCircle, X } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import { WHATSAPP_URL } from "../lib/whatsapp";
 
 export const WhatsAppButton = () => {
+  const { t } = useTranslation();
+
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(false);
 
@@ -12,11 +15,10 @@ export const WhatsAppButton = () => {
       setIsVisible(window.scrollY > 300);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Show tooltip after 3 seconds
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowTooltip(true);
@@ -35,7 +37,6 @@ export const WhatsAppButton = () => {
           exit={{ scale: 0, opacity: 0 }}
           className="fixed bottom-8 right-8 z-50"
         >
-          {/* Tooltip */}
           <AnimatePresence>
             {showTooltip && (
               <motion.div
@@ -51,19 +52,21 @@ export const WhatsAppButton = () => {
                   >
                     <X className="w-4 h-4 text-gray-400" />
                   </button>
+
                   <p className="text-sm font-semibold text-gray-900 mb-1">
-                    Need help with your design?
+                    {t("whatsapp.title")}
                   </p>
+
                   <p className="text-xs text-gray-600">
-                    Chat with us on WhatsApp!
+                    {t("whatsapp.description")}
                   </p>
-                  <div className="absolute -bottom-2 right-8 w-4 h-4 bg-white transform rotate-45" />
+
+                  <div className="absolute -bottom-2 right-8 w-4 h-4 bg-white rotate-45" />
                 </div>
               </motion.div>
             )}
           </AnimatePresence>
 
-          {/* WhatsApp Button */}
           <motion.a
             href={WHATSAPP_URL}
             target="_blank"
@@ -73,10 +76,8 @@ export const WhatsAppButton = () => {
             whileTap={{ scale: 0.9 }}
             className="relative group block"
           >
-            {/* Ping Animation */}
             <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75" />
-            
-            {/* Button */}
+
             <div className="relative w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full shadow-2xl shadow-green-500/50 flex items-center justify-center group-hover:shadow-green-500/70 transition-all duration-300">
               <MessageCircle className="w-8 h-8 text-white" />
             </div>

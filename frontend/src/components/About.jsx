@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Award, Users, Zap, Heart, MapPin, Briefcase } from 'lucide-react';
@@ -11,6 +12,7 @@ const Red = ({ children }) => (
 );
 
 export const About = () => {
+  const { t } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -24,11 +26,27 @@ export const About = () => {
   };
 
   const features = [
-    { icon: Award, title: 'Excellence', description: 'Award-winning designs that stand out' },
-    { icon: Users, title: 'Client-Focused', description: 'Your vision, our expertise' },
-    { icon: Zap, title: 'Fast Delivery', description: 'Quality work, delivered on time' },
-    { icon: Heart, title: 'Passion', description: 'We love what we do, and it shows' },
-  ];
+  {
+    icon: Award,
+    title: t("about.features.excellence.title"),
+    description: t("about.features.excellence.description"),
+  },
+  {
+    icon: Users,
+    title: t("about.features.client.title"),
+    description: t("about.features.client.description"),
+  },
+  {
+    icon: Zap,
+    title: t("about.features.delivery.title"),
+    description: t("about.features.delivery.description"),
+  },
+  {
+    icon: Heart,
+    title: t("about.features.passion.title"),
+    description: t("about.features.passion.description"),
+  },
+];
 
   return (
     <section id="about" ref={ref} className="relative py-32 bg-white overflow-hidden">
@@ -52,12 +70,12 @@ export const About = () => {
           className="text-center mb-20"
         >
           <div className="inline-block px-4 py-2 bg-red-50 rounded-full mb-4">
-            <span className="text-sm font-semibold text-red-600">About Design World</span>
+            <span className="text-sm font-semibold text-red-600">{t("about.badge")}</span>
           </div>
           <h2 className="font-display text-4xl lg:text-6xl font-bold text-gray-900 leading-tight max-w-4xl mx-auto">
-            Meet the Creative Mind Behind{' '}
+            {t("about.title1")}{' '}
             <span className="bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
-              Design World
+              {t("about.title2")}
             </span>
           </h2>
         </motion.div>
@@ -84,7 +102,7 @@ export const About = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="absolute -bottom-12 left-4 right-4 sm:left-8 sm:right-8 bg-white/60 backdrop-blur-2xl rounded-2xl p-6 shadow-2xl shadow-black/20 border border-white/60"
+              className="absolute -bottom-8 left-4 right-4 sm:left-8 sm:right-8 bg-white/60 backdrop-blur-2xl rounded-2xl p-6 shadow-2xl shadow-black/20 border border-white/60"
             >
               <div className="flex items-start justify-between">
                 <div>
@@ -94,16 +112,20 @@ export const About = () => {
                   <div className="flex items-center gap-2 mt-1.5 text-red-600">
                     <Briefcase className="w-4 h-4" />
                     <span className="text-sm font-semibold">
-                      Founder &amp; Creative Graphic Designer
+                      {t("about.founderRole")}
                     </span>
                   </div>
                   <div className="flex items-center gap-2 mt-1 text-[#001F54]">
                     <Award className="w-4 h-4" />
-                    <span className="text-sm font-semibold">Design World</span>
+                    <span className="text-sm font-semibold">
+                    {t("about.company")}
+                    </span>
                   </div>
                   <div className="flex items-center gap-2 mt-1 text-gray-600">
                     <MapPin className="w-4 h-4" />
-                    <span className="text-sm">Kharghar, Navi Mumbai</span>
+                    <span className="text-sm">
+                    {t("about.location")}
+                    </span>
                   </div>
                 </div>
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#001F54] to-blue-800 flex items-center justify-center flex-shrink-0">
@@ -126,28 +148,23 @@ export const About = () => {
               className="space-y-5 text-lg text-gray-600 leading-relaxed"
             >
               <p>
-  Hi, I'm <Nav>Vivekanand Garje</Nav>, founder of <Red>Design World</Red>. Since
-  launching <Red>Design World</Red> in <Nav>January 2023</Nav>, I've been helping
-  businesses build impactful brands through <Red>Graphic Design</Red>,{" "}
-  <Nav>Branding</Nav>, <Red>Packaging</Red>, <Nav>Print Design</Nav>,{" "}
-  <Red>Website Design & Development</Red>, and{" "}
-  <Red>Marketing Solutions</Red>.
-</p>
-
-<p>
-  Based in <Nav>Kharghar, Navi Mumbai</Nav>, Design World specializes in{" "}
-  <Red>Branding</Red>, <Red>Packaging</Red>, <Red>Print Design</Red>,{" "}
-  <Red>Social Media Design</Red>, and{" "}
-  <Red>Website Design & Development</Red>. Every project is an opportunity to
-  create innovative solutions that help businesses grow and stand out.
-</p>
-
-<p>
-  My mission is simple: to deliver creative solutions that not only look
-  exceptional but also help businesses grow. Whether you need a memorable brand
-  identity, high-quality print materials, engaging marketing creatives, or a
-  modern business website, I'm here to bring your vision to life.
-</p>
+                Hi, I'm <Nav>Vivekanand Garje</Nav>, founder of <Red>Design World</Red>. Since
+                launching <Red>Design World</Red> in <Nav>January 2023</Nav>, I've been helping
+                businesses create impactful brand identities through <Red>graphic design</Red>,{' '}
+                <Nav>branding</Nav>, <Red>packaging</Red>, <Nav>print design</Nav>, and{' '}
+                <Red>marketing solutions</Red>.
+              </p>
+              <p>
+                Based in <Nav>Kharghar, Navi Mumbai</Nav>, Design World specializes in{' '}
+                <Red>Branding</Red>, <Red>Packaging</Red>, <Red>Print Design</Red>, and{' '}
+                <Red>Social Media Design</Red>. Every project is an opportunity to create
+                something extraordinary.
+              </p>
+              <p>
+                My mission is simple: deliver designs that not only look beautiful but also drive
+                results. Whether you're a startup or an established business, I'm here to bring
+                your vision to life.
+              </p>
             </motion.div>
 
             {/* Feature grid */}

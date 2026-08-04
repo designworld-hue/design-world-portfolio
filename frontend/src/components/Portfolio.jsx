@@ -1,84 +1,93 @@
+import { useTranslation } from "react-i18next";
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 
 export const Portfolio = () => {
+  const { t } = useTranslation();
+
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const categories = ['All', 'Branding', 'Packaging', 'Print Design', 'Social Media'];
+  const categories = [
+  { key: "all", label: t("portfolio.categories.all") },
+  { key: "branding", label: t("portfolio.categories.branding") },
+  { key: "packaging", label: t("portfolio.categories.packaging") },
+  { key: "print", label: t("portfolio.categories.print") },
+  { key: "social", label: t("portfolio.categories.social") },
+];
 
   const projects = [
-    {
-      id: 1,
-      title: 'Aurelia — Luxury Brand Identity',
-      category: 'Branding',
-      image: '/portfolio/luxury-brand-identity.png',
-      description: 'Complete brand identity with logo, business cards (front & back), letterhead, envelope, notebook, folder & pen',
-    },
-    {
-      id: 2,
-      title: 'Lumière Cosmetic Packaging',
-      category: 'Packaging',
-      image: '/portfolio/premium-cosmetic-packaging.png',
-      description: 'Elegant packaging design with printed labels for a luxury skincare brand',
-    },
-    {
-      id: 3,
-      title: 'Nexus Corporate Stationery',
-      category: 'Branding',
-      image: '/portfolio/corporate-stationery.png',
-      description: 'Professional business stationery with modern geometric branding',
-    },
-    {
-      id: 4,
-      title: 'Roost Product Labels',
-      category: 'Packaging',
-      image: '/portfolio/product-label-design.png',
-      description: 'Branded product labels for an artisan coffee brand',
-    },
-    {
-      id: 5,
-      title: 'Haven Marketing Brochure',
-      category: 'Print Design',
-      image: '/portfolio/marketing-brochure.png',
-      description: 'Tri-fold brochure with designed interior pages for a real estate brand',
-    },
-    {
-      id: 6,
-      title: 'Pulse Social Media Campaign',
-      category: 'Social Media',
-      image: '/portfolio/social-media-campaign.png',
-      description: 'Instagram post design set for a fitness brand',
-    },
-    {
-      id: 7,
-      title: 'Business Card Collection',
-      category: 'Branding',
-      image: '/portfolio/business-card-collection.png',
-      description: 'Premium business cards with full branding, front & back',
-    },
-    {
-      id: 8,
-      title: 'Soniq Product Packaging',
-      category: 'Packaging',
-      image: '/portfolio/premium-product-box.png',
-      description: 'Custom branded rigid box design for a headphone brand',
-    },
-    {
-      id: 9,
-      title: 'Echo Fest Poster & Banner',
-      category: 'Print Design',
-      image: '/portfolio/event-poster-design.png',
-      description: 'Bold artistic poster and banner design for a music festival',
-    },
-  ];
+  {
+    id: 1,
+    title: t("portfolio.projects.1.title"),
+    category: "branding",
+    image: "/portfolio/luxury-brand-identity.png",
+    description: t("portfolio.projects.1.description"),
+  },
+  {
+    id: 2,
+    title: t("portfolio.projects.2.title"),
+    category: "packaging",
+    image: "/portfolio/premium-cosmetic-packaging.png",
+    description: t("portfolio.projects.2.description"),
+  },
+  {
+    id: 3,
+    title: t("portfolio.projects.3.title"),
+    category: "branding",
+    image: "/portfolio/corporate-stationery.png",
+    description: t("portfolio.projects.3.description"),
+  },
+  {
+    id: 4,
+    title: t("portfolio.projects.4.title"),
+    category: "packaging",
+    image: "/portfolio/product-label-design.png",
+    description: t("portfolio.projects.4.description"),
+  },
+  {
+    id: 5,
+    title: t("portfolio.projects.5.title"),
+    category: "print",
+    image: "/portfolio/marketing-brochure.png",
+    description: t("portfolio.projects.5.description"),
+  },
+  {
+    id: 6,
+    title: t("portfolio.projects.6.title"),
+    category: "social",
+    image: "/portfolio/social-media-campaign.png",
+    description: t("portfolio.projects.6.description"),
+  },
+  {
+    id: 7,
+    title: t("portfolio.projects.7.title"),
+    category: "branding",
+    image: "/portfolio/business-card-collection.png",
+    description: t("portfolio.projects.7.description"),
+  },
+  {
+    id: 8,
+    title: t("portfolio.projects.8.title"),
+    category: "packaging",
+    image: "/portfolio/premium-product-box.png",
+    description: t("portfolio.projects.8.description"),
+  },
+  {
+    id: 9,
+    title: t("portfolio.projects.9.title"),
+    category: "print",
+    image: "/portfolio/event-poster-design.png",
+    description: t("portfolio.projects.9.description"),
+  },
+];
 
   const filteredProjects =
-    selectedCategory === 'All'
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+  selectedCategory === "all"
+    ? projects
+    : projects.filter((p) => p.category === selectedCategory);
 
   return (
     <section id="portfolio" ref={ref} className="relative py-32 bg-gradient-to-b from-white to-gray-50">
@@ -91,13 +100,13 @@ export const Portfolio = () => {
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-2 bg-red-50 rounded-full mb-4">
-            <span className="text-sm font-semibold text-red-600">Our Work</span>
+            <span className="text-sm font-semibold text-red-600">{t("portfolio.badge")}</span>
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Featured Portfolio
+            {t("portfolio.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Showcasing our best design work across branding, packaging, and marketing materials
+            {t("portfolio.description")}
           </p>
         </motion.div>
 
@@ -109,19 +118,19 @@ export const Portfolio = () => {
           className="flex flex-wrap justify-center gap-4 mb-16"
         >
           {categories.map((category) => (
-            <button
-              key={category}
-              data-testid={`portfolio-filter-${category.toLowerCase().replace(/ /g, '-')}`}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                selectedCategory === category
-                  ? 'bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-500/30'
-                  : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-200'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
+  <button
+    key={category.key}
+    data-testid={`portfolio-filter-${category.key}`}
+    onClick={() => setSelectedCategory(category.key)}
+    className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+      selectedCategory === category.key
+        ? "bg-gradient-to-r from-red-600 to-red-700 text-white shadow-lg shadow-red-500/30"
+        : "bg-white text-gray-700 hover:bg-gray-50 border border-gray-200"
+    }`}
+  >
+    {category.label}
+  </button>
+))}
         </motion.div>
 
         {/* Portfolio Grid */}

@@ -1,27 +1,29 @@
+import { useTranslation } from "react-i18next";
 import { motion } from 'framer-motion';
 import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import { WHATSAPP_URL } from '../lib/whatsapp';
 
 export const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const services = [
-    'Logo Design',
-    'Brand Identity',
-    'Packaging Design',
-    'Social Media Design',
-    'Print Design',
-    'Business Cards',
-  ];
+  t("footer.services.logo"),
+  t("footer.services.brand"),
+  t("footer.services.packaging"),
+  t("footer.services.social"),
+  t("footer.services.print"),
+  t("footer.services.cards"),
+];
 
   const quickLinks = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Contact', href: '#contact' },
-  ];
+  { label: t("navbar.home"), href: "#home" },
+  { label: t("navbar.about"), href: "#about" },
+  { label: t("navbar.portfolio"), href: "#portfolio" },
+  { label: t("navbar.services"), href: "#services" },
+  { label: t("navbar.process"), href: "#process" },
+  { label: t("navbar.contact"), href: "#contact" },
+];
 
   return (
     <footer className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900 text-white overflow-hidden">
@@ -39,7 +41,7 @@ export const Footer = () => {
               <img src="/logo.webp" alt="Design World - Complete Design & Printing Solution" className="h-12 w-auto" />
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
-              Creating memorable brand identities through creative graphic design, branding, packaging, and marketing solutions.
+              {t("footer.description")}
             </p>
             <div className="flex gap-4">
               <a
@@ -67,7 +69,7 @@ export const Footer = () => {
             </div>
           </div>
 
-          {/* Quick Links */}
+          {/* {t("footer.quickLinks")} */}
           <div>
             <h3 className="text-lg font-bold mb-6">Quick Links</h3>
             <ul className="space-y-3">
@@ -84,7 +86,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Services */}
+          {/* {t("footer.servicesTitle")} */}
           <div>
             <h3 className="text-lg font-bold mb-6">Services</h3>
             <ul className="space-y-3">
@@ -101,13 +103,13 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* {t("footer.contactTitle")} */}
           <div>
             <h3 className="text-lg font-bold mb-6">Contact</h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-gray-300">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1 text-red-400" />
-                <span>Kharghar, Navi Mumbai, Maharashtra, India</span>
+                <span>{t("footer.location")}</span>
               </li>
               <li className="flex items-start gap-3 text-gray-300">
                 <Phone className="w-5 h-5 flex-shrink-0 mt-1 text-red-400" />
@@ -129,18 +131,12 @@ export const Footer = () => {
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-  © {currentYear} Design World. All Rights Reserved.
-</p>
-
-<p className="text-gray-400 text-sm">
-  Designed & Developed by{" "}
-  <a
-    href="/"
-    className="font-semibold text-white hover:text-red-400 transition-colors"
-  >
-    Design World
-  </a>
-</p>
+              © {currentYear} {t("footer.copyright")}
+            </p>
+            <p className="text-gray-400 text-sm">
+              {t("footer.designed")}{' '}
+              <span className="text-red-400">❤</span> {t("footer.company")}
+            </p>
           </div>
         </div>
       </div>
