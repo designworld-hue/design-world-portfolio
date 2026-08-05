@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Sparkles, Palette, Package, Printer, Share2 } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/whatsapp';
+import { WHATSAPP_URL, trackWhatsAppClick } from '../lib/whatsapp';
 
 export const Hero = () => {
   const { t } = useTranslation();
@@ -118,6 +118,7 @@ export const Hero = () => {
         >
           <motion.a
             href={WHATSAPP_URL}
+            onClick={() => trackWhatsAppClick("Hero")}
             target="_blank"
             rel="noopener noreferrer"
             data-testid="hero-whatsapp-cta"

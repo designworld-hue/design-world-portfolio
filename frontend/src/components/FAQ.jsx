@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from './ui/accordion';
-import { WHATSAPP_URL } from '../lib/whatsapp';
+import { WHATSAPP_URL, trackWhatsAppClick } from '../lib/whatsapp';
 export const FAQ = () => {
   const { t } = useTranslation();
 
@@ -112,9 +112,10 @@ const faqs = [
             {t("faq.cta.description")}
           </p>
           <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+          href={WHATSAPP_URL}
+          onClick={() => trackWhatsAppClick("FAQ")}
+          target="_blank"
+          rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-semibold shadow-xl shadow-red-500/30 hover:shadow-2xl hover:shadow-red-500/40 hover:scale-105 transition-all duration-300"
           >
             {t("faq.cta.button")}

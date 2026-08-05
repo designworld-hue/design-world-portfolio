@@ -2,7 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { MessageCircle, X } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { WHATSAPP_URL } from "../lib/whatsapp";
+import { WHATSAPP_URL, trackWhatsAppClick } from "../lib/whatsapp";
 
 export const WhatsAppButton = () => {
   const { t } = useTranslation();
@@ -68,13 +68,14 @@ export const WhatsAppButton = () => {
           </AnimatePresence>
 
           <motion.a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-testid="floating-whatsapp-button"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="relative group block"
+          href={WHATSAPP_URL}
+          onClick={() => trackWhatsAppClick("Floating Button")}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-testid="floating-whatsapp-button"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="relative group block"
           >
             <span className="absolute inset-0 rounded-full bg-green-500 animate-ping opacity-75" />
 

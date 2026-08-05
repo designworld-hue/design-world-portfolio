@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { motion } from 'framer-motion';
 import { Instagram, Mail, Phone, MapPin } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/whatsapp';
+import { WHATSAPP_URL, trackWhatsAppClick } from '../lib/whatsapp';
 
 export const Footer = () => {
   const { t } = useTranslation();
@@ -59,9 +59,10 @@ export const Footer = () => {
                 <Mail className="w-5 h-5" />
               </a>
               <a
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              href={WHATSAPP_URL}
+              onClick={() => trackWhatsAppClick("Footer Social")}
+              target="_blank"
+              rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 backdrop-blur-md rounded-full flex items-center justify-center hover:bg-red-600 transition-colors duration-300"
               >
                 <Phone className="w-5 h-5" />
@@ -113,7 +114,11 @@ export const Footer = () => {
               </li>
               <li className="flex items-start gap-3 text-gray-300">
                 <Phone className="w-5 h-5 flex-shrink-0 mt-1 text-red-400" />
-                <a href={WHATSAPP_URL} className="hover:text-red-400 transition-colors">
+                <a
+                href={WHATSAPP_URL}
+                onClick={() => trackWhatsAppClick("Footer Contact")}
+                className="hover:text-red-400 transition-colors"
+                >
                   +91 9322994747
                 </a>
               </li>

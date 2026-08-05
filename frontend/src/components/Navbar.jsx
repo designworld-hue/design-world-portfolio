@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
-import { WHATSAPP_URL } from '../lib/whatsapp';
+import { WHATSAPP_URL, trackWhatsAppClick } from '../lib/whatsapp';
 import { useTranslation } from "react-i18next";
 
 export const Navbar = () => {
@@ -56,11 +56,14 @@ const changeLanguage = (lang) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.a
-            href="#home"
-            className="flex items-center space-x-3"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.2 }}
-          >
+          href={WHATSAPP_URL}
+         onClick={() => trackWhatsAppClick("Navbar")}
+         target="_blank"
+         rel="noopener noreferrer"
+         whileHover={{ scale: 1.05 }}
+         whileTap={{ scale: 0.95 }}
+         className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
+         >
             <img src="/logo.webp" alt="Design World - Complete Design & Printing Solution" className="h-12 w-auto" />
           </motion.a>
 
@@ -187,13 +190,14 @@ const changeLanguage = (lang) => {
 </div>
 
             <a
-  href={WHATSAPP_URL}
-  target="_blank"
-  rel="noopener noreferrer"
-  className="block px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium text-center"
->
-  {t("navbar.letsTalk")}
-</a>
+            href={WHATSAPP_URL}
+            onClick={() => trackWhatsAppClick("Navbar Mobile")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium text-center"
+            >
+            {t("navbar.letsTalk")}
+            </a>
           </div>
         </motion.div>
       )}

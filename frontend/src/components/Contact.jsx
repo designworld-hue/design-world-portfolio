@@ -3,7 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { MapPin, Phone, Mail, Instagram, Send } from 'lucide-react';
 import { toast } from 'sonner';
-import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../lib/whatsapp';
+import { WHATSAPP_URL, WHATSAPP_NUMBER, trackWhatsAppClick } from '../lib/whatsapp';
 
 export const Contact = () => {
   const { t, i18n } = useTranslation();
@@ -44,6 +44,9 @@ Project Details:
 ${formData.message}`;
 
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(messageText)}`;
+    
+    // Track Google Analytics Event
+    trackWhatsAppClick("Contact Form");
     
     // Open WhatsApp
     window.open(whatsappURL, '_blank');
