@@ -41,35 +41,46 @@
     "text": "CREATIVE DESIGN • BRANDING • PACKAGING • PRINT DESIGN • SOCIAL MEDIA •"
   },
     "about": {
-    "badge": "About Design World",
+  "badge": "About Design World",
 
-    "title1": "Meet the Creative Mind Behind",
-    "title2": "Design World",
+  "title1": "Meet the Creative Mind Behind",
+  "title2": "Design World",
 
-    "founderRole": "Founder & Creative Graphic Designer",
-    "company": "Design World",
-    "location": "Kharghar, Navi Mumbai",
+  "founderRole": "Founder & Creative Graphic Designer",
+  "company": "Design World",
+  "location": "Kharghar, Navi Mumbai",
 
-    "features": {
-      "excellence": {
-        "title": "Excellence",
-        "description": "Award-winning designs that stand out"
-      },
-      "client": {
-        "title": "Client-Focused",
-        "description": "Your vision, our expertise"
-      },
-      "delivery": {
-        "title": "Fast Delivery",
-        "description": "Quality work, delivered on time"
-      },
-      "passion": {
-        "title": "Passion",
-        "description": "We love what we do, and it shows"
-      }
-    }
+  "paragraph1": "Hello, I'm",
+  "paragraph2": ", Founder of",
+  "paragraph3": "Since establishing",
+  "paragraph4": "in",
+  "paragraph5": "I have been helping businesses build strong and memorable brand identities from",
+  "paragraph6": "through",
+  "paragraph7": "Every project is more than just a design—it's an opportunity to create a unique identity, strengthen a brand, and deliver an experience that leaves a lasting impression.",
+  "paragraph8": "My mission is simple: to create visually appealing, user-friendly, and result-driven designs and",
+  "paragraph9": "that help businesses grow. Whether you're a startup or an established business,",
+  "paragraph10": "is committed to transforming your ideas into impactful visual experiences and building a brand that stands out."
   },
 
+  "features": {
+    "excellence": {
+      "title": "Excellence",
+      "description": "Award-winning designs that stand out"
+    },
+    "client": {
+      "title": "Client-Focused",
+      "description": "Your vision, our expertise"
+    },
+    "delivery": {
+      "title": "Fast Delivery",
+      "description": "Quality work, delivered on time"
+    },
+    "passion": {
+      "title": "Passion",
+      "description": "We love what we do, and it shows"
+    }
+  },
+    
   "services": {
     "badge": "What We Offer",
     "title": "Our Services",
@@ -282,52 +293,46 @@
     }
   },
     "contact": {
-    "badge": "Get In Touch",
-    "title": "Let's Work Together",
-    "description": "Have a project in mind? Contact us today and let's create something amazing together.",
+  "badge": "Get In Touch",
+  "title": "Let's Create Together",
+  "description": "Have a project in mind? Let's discuss how we can bring your vision to life.",
 
-    "info": {
-      "phone": "Phone",
-      "email": "Email",
-      "location": "Location"
+  "infoTitle": "Contact Information",
+  "infoDescription": "I'd love to hear about your project. Feel free to reach out through any of the channels below.",
+  "founderRole": "Founder & Creative Graphic Designer",
+
+  "info": {
+    "location": {
+      "title": "Location",
+      "value": "Kharghar, Navi Mumbai, Maharashtra, India"
     },
-
-    "location": "Kharghar, Navi Mumbai, Maharashtra, India",
-
-    "form": {
-      "name": "Your Name",
-      "email": "Your Email",
-      "phone": "Phone Number",
-      "message": "Tell us about your project",
-      "button": "Send Message"
+    "whatsapp": {
+      "title": "WhatsApp"
+    },
+    "email": {
+      "title": "Email"
+    },
+    "instagram": {
+      "title": "Instagram"
     }
   },
 
-  "footer": {
-    "description": "Creating memorable brand identities through creative graphic design, branding, packaging and marketing solutions.",
-
-    "quickLinks": "Quick Links",
-    "servicesTitle": "Services",
-    "contactTitle": "Contact",
-
-    "location": "Kharghar, Navi Mumbai, Maharashtra, India",
-
-    "services": {
-      "logo": "Logo Design",
-      "brand": "Brand Identity",
-      "packaging": "Packaging Design",
-      "social": "Social Media Design",
-      "print": "Print Design",
-      "cards": "Business Cards"
-    },
-
-    "copyright": "Design World. All Rights Reserved.",
-    "designed": "Designed & Developed with",
-    "company": "by Design World"
+  "form": {
+    "name": "Your Name",
+    "namePlaceholder": "Enter your full name",
+    "email": "Your Email",
+    "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number",
+    "message": "Tell us about your project",
+    "messagePlaceholder": "Describe your project...",
+    "button": "Send via WhatsApp"
   },
 
-  "whatsapp": {
-    "title": "Need help with your design?",
-    "description": "Chat with us on WhatsApp!"
+  "toast": {
+    "errorTitle": "Missing Information",
+    "errorDescription": "Please fill in all required fields.",
+    "successTitle": "Message Ready",
+    "successDescription": "Opening WhatsApp..."
   }
 }
+  }

@@ -125,7 +125,7 @@ const changeLanguage = (lang) => {
     whileTap={{ scale: 0.95 }}
     className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
   >
-    Let's Talk
+    {t("navbar.letsTalk")}
   </motion.a>
 
 </div>

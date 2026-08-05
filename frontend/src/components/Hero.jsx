@@ -78,28 +78,29 @@ export const Hero = () => {
         </motion.div>
 
         {/* Headline with line-by-line reveal — single semantic h1 */}
-        <h1 className="font-display text-5xl sm:text-6xl lg:text-8xl font-bold leading-[1.2] tracking-tight mb-8">
-          <span className="block overflow-hidden py-1">
-            <motion.span variants={lineVariants} className="block text-gray-900 pb-1">
-              {t("hero.title1")}
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden py-1">
-            <motion.span variants={lineVariants} className="block pb-1">
-              <span className="text-gray-900">{t("hero.title2")} </span>
-              <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
-                {t("hero.title3")}
-              </span>
-            </motion.span>
-          </span>
-          <span className="block overflow-hidden py-1">
-            <motion.span
-              variants={lineVariants}
-              className="block bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent pb-2"
-            >
-              {t("hero.title4")}
-            </motion.span>
-          </span>
+        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold leading-[1.32] tracking-tight mb-8">
+          <span className="block overflow-hidden pt-2 pb-2">
+  <motion.span variants={lineVariants} className="block text-gray-900">
+    {t("hero.title1")}
+  </motion.span>
+</span>
+
+<span className="block overflow-hidden py-2">
+  <motion.span variants={lineVariants} className="block text-gray-900">
+    {t("hero.title2")}
+  </motion.span>
+</span>
+
+<span className="block overflow-hidden pt-2">
+  <motion.span variants={lineVariants} className="block">
+    <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
+      {t("hero.title3")}
+    </span>{" "}
+    <span className="bg-gradient-to-r from-red-600 via-red-700 to-red-800 bg-clip-text text-transparent">
+      {t("hero.title4")}
+    </span>
+  </motion.span>
+</span>
         </h1>
 
         {/* Subheading */}
@@ -169,10 +170,10 @@ export const Hero = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mt-16 pt-10 border-t border-gray-200/70"
         >
           {[
-            { value: '250+', label: 't("hero.stats.projects")' },
-            { value: '120+', label: 't("hero.stats.clients")' },
-            { value: '3+', label: 't("hero.stats.experience")' },
-            { value: '100%', label: 't("hero.stats.satisfaction")' },
+            { value: "250+", label: t("hero.stats.projects") },
+            { value: "120+", label: t("hero.stats.clients") },
+            { value: "3+", label: t("hero.stats.experience") },
+            { value: "100%", label: t("hero.stats.satisfaction") },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

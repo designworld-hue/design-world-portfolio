@@ -5,14 +5,19 @@ import { Award, Users, Zap, Heart, MapPin, Briefcase } from 'lucide-react';
 
 // Brand-colored keyword highlight
 const Nav = ({ children }) => (
-  <span className="font-semibold text-[#001F54]">{children}</span>
+  <span className="font-bold text-[#1F3B82]">
+    {children}
+  </span>
 );
+
 const Red = ({ children }) => (
-  <span className="font-semibold text-red-600">{children}</span>
+  <span className="font-bold text-[#CB2121]">
+    {children}
+  </span>
 );
 
 export const About = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
@@ -147,24 +152,55 @@ export const About = () => {
               transition={{ delay: 0.2 }}
               className="space-y-5 text-lg text-gray-600 leading-relaxed"
             >
-              <p>
-                Hi, I'm <Nav>Vivekanand Garje</Nav>, founder of <Red>Design World</Red>. Since
-                launching <Red>Design World</Red> in <Nav>January 2023</Nav>, I've been helping
-                businesses create impactful brand identities through <Red>graphic design</Red>,{' '}
-                <Nav>branding</Nav>, <Red>packaging</Red>, <Nav>print design</Nav>, and{' '}
-                <Red>marketing solutions</Red>.
-              </p>
-              <p>
-                Based in <Nav>Kharghar, Navi Mumbai</Nav>, Design World specializes in{' '}
-                <Red>Branding</Red>, <Red>Packaging</Red>, <Red>Print Design</Red>, and{' '}
-                <Red>Social Media Design</Red>. Every project is an opportunity to create
-                something extraordinary.
-              </p>
-              <p>
-                My mission is simple: deliver designs that not only look beautiful but also drive
-                results. Whether you're a startup or an established business, I'm here to bring
-                your vision to life.
-              </p>
+              {i18n.language === "mr" ? (
+  <>
+    <p className="leading-8 text-gray-700">
+  नमस्कार, मी <Nav>विवेकानंद बाबासाहेब गर्जे</Nav>, <Red>डिझाईन वर्ल्ड</Red> चा संस्थापक.
+</p>
+
+<p className="leading-8 text-gray-700 mt-5">
+  <Red>जानेवारी २०२३</Red> मध्ये <Red>डिझाईन वर्ल्ड</Red> ची स्थापना केल्यापासून, मी <Nav>खारघर, नवी मुंबई</Nav> येथून व्यवसायांना प्रभावी ब्रँड ओळख निर्माण करण्यासाठी <Red>ग्राफिक डिझाईन</Red>, <Red>ब्रँडिंग</Red>, <Red>पॅकेजिंग</Red>, <Red>प्रिंट डिझाईन</Red>, <Red>सोशल मीडिया डिझाईन</Red>, तसेच आधुनिक <Red>वेबसाइट डिझाईन आणि डेव्हलपमेंट</Red> या क्षेत्रांमध्ये सर्जनशील, दर्जेदार आणि परिणामकारक सेवा देत आहे. प्रत्येक प्रकल्प आमच्यासाठी केवळ एक डिझाईन नसून, ग्राहकाच्या कल्पनांना वेगळी ओळख देणारा, त्यांचा ब्रँड अधिक प्रभावी बनवणारा आणि दीर्घकाळ लक्षात राहणारा अनुभव निर्माण करण्याची संधी असते.
+</p>
+
+<p className="leading-8 text-gray-700 mt-5">
+  माझं ध्येय एकच आहे — दिसायला आकर्षक, वापरण्यास सोपी आणि व्यवसायाच्या वाढीस हातभार लावणारी डिझाईन्स व <Red>डिजिटल सोल्यूशन्स</Red> तयार करणे. तुम्ही नव्याने सुरू झालेला स्टार्टअप असाल किंवा प्रस्थापित उद्योग, तुमच्या ब्रँडला एक वेगळी ओळख देण्यासाठी आणि तुमच्या कल्पनांना प्रभावी वास्तवात उतरवण्यासाठी <Red>डिझाईन वर्ल्ड</Red> सदैव तुमच्या सोबत आहे.
+</p>
+  </>
+) : (
+  <>
+  <p className="leading-8 text-gray-700">
+    Hello, I'm{" "}
+    <Nav>Vivekanand Babasaheb Garje</Nav>, Founder of{" "}
+    <Red>Design World</Red>.
+  </p>
+
+  <p className="leading-8 text-gray-700 mt-5">
+    Since establishing{" "}
+    <Red>Design World</Red> in{" "}
+    <Red>January 2023</Red>, I have been helping businesses build strong and
+    memorable brand identities from{" "}
+    <Nav>Kharghar, Navi Mumbai</Nav> through{" "}
+    <Red>Graphic Design</Red>,{" "}
+    <Red>Branding</Red>,{" "}
+    <Red>Packaging Design</Red>,{" "}
+    <Red>Print Design</Red>,{" "}
+    <Red>Social Media Design</Red>, and{" "}
+    <Red>Website Design & Development</Red>. Every project is more than just a
+    design—it's an opportunity to create a unique identity, strengthen a brand,
+    and deliver an experience that leaves a lasting impression.
+  </p>
+
+  <p className="leading-8 text-gray-700 mt-5">
+    My mission is simple: to create visually appealing, user-friendly, and
+    result-driven designs and{" "}
+    <Red>Digital Solutions</Red> that help businesses grow. Whether you're a
+    startup or an established business,{" "}
+    <Red>Design World</Red> is committed to transforming your ideas into
+    impactful visual experiences and building a brand that stands out.
+  </p>
+  </>
+)}
+
             </motion.div>
 
             {/* Feature grid */}

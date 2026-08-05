@@ -6,7 +6,7 @@ import { toast } from 'sonner';
 import { WHATSAPP_URL, WHATSAPP_NUMBER } from '../lib/whatsapp';
 
 export const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const [formData, setFormData] = useState({
@@ -95,13 +95,12 @@ const contactInfo = [
           className="text-center mb-16"
         >
           <div className="inline-block px-4 py-2 bg-red-50 rounded-full mb-4">
-            <span className="text-sm font-semibold text-red-600">Get In Touch</span>
           </div>
           <h2 className="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Let's Create Together
+          {t("contact.title")}
           </h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Have a project in mind? Let's discuss how we can bring your vision to life.
+          {t("contact.description")}
           </p>
         </motion.div>
 
@@ -130,8 +129,15 @@ const contactInfo = [
                 className="w-16 h-16 rounded-full object-cover border-2 border-white/30"
               />
               <div>
-                <div className="text-white font-bold text-lg">Vivekanand Garje</div>
-                <div className="text-gray-300 text-sm">{t("contact.founderRole")}</div>
+                <div className="text-white font-bold text-lg">
+  {i18n.language === "mr"
+    ? "विवेकानंद बाबासाहेब गर्जे"
+    : "Vivekanand Babasaheb Garje"}
+</div>
+
+<div className="text-gray-300 text-sm">
+  {t("contact.founderRole")}
+</div>
               </div>
             </div>
 
