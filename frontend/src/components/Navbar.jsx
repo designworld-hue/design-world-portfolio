@@ -159,14 +159,41 @@ const changeLanguage = (lang) => {
                 {item.label}
               </a>
             ))}
+
+           <div className="flex gap-3 pt-2">
+
+  <button
+    onClick={() => changeLanguage("en")}
+    className={`flex-1 py-3 rounded-xl border ${
+      i18n.language === "en"
+        ? "bg-red-600 text-white"
+        : "bg-white text-gray-700"
+    }`}
+  >
+    🇬🇧 English
+  </button>
+
+  <button
+    onClick={() => changeLanguage("mr")}
+    className={`flex-1 py-3 rounded-xl border ${
+      i18n.language === "mr"
+        ? "bg-red-600 text-white"
+        : "bg-white text-gray-700"
+    }`}
+  >
+    🇮🇳 मराठी
+  </button>
+
+</div>
+
             <a
-              href={WHATSAPP_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium text-center"
-            >
-              Let's Talk
-            </a>
+  href={WHATSAPP_URL}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium text-center"
+>
+  {t("navbar.letsTalk")}
+</a>
           </div>
         </motion.div>
       )}
