@@ -141,10 +141,10 @@
 
     "categories": {
       "all": "सर्व",
-      "branding": "ब्रँडिंग",
-      "packaging": "पॅकेजिंग",
-      "print": "प्रिंट",
-      "social": "सोशल मीडिया"
+      "Branding": "ब्रँडिंग",
+      "Packaging": "पॅकेजिंग",
+      "Print": "प्रिंट",
+      "Social": "सोशल मीडिया"
     },
 
     "projects": {

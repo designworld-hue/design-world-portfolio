@@ -163,8 +163,8 @@ export const Portfolio = () => {
 
               {/* Content */}
               <div className="p-6">
-                <div className="text-xs font-semibold text-red-600 mb-2">
-                  {project.category}
+                <div className="text-xs font-semibold text-red-600 mb-2 uppercase tracking-wide">
+                {t(`portfolio.categories.${project.category}`)}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {project.title}

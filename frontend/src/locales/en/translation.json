@@ -141,10 +141,10 @@
 
     "categories": {
       "all": "All",
-      "branding": "Branding",
-      "packaging": "Packaging",
-      "print": "Print",
-      "social": "Social Media"
+      "Branding": "Branding",
+      "Packaging": "Packaging",
+      "Print": "Print",
+      "Social": "Social Media"
     },
 
     "projects": {
