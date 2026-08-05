@@ -140,12 +140,12 @@
     "description": "Explore some of our recent branding, packaging, print and digital design work.",
 
     "categories": {
-      "all": "All",
-      "Branding": "Branding",
-      "Packaging": "Packaging",
-      "Print": "Print",
-      "Social": "Social Media"
-    },
+  "all": "All",
+  "branding": "Branding",
+  "packaging": "Packaging",
+  "print": "Print",
+  "social": "Social Media"
+},
 
     "projects": {
       "1": {
