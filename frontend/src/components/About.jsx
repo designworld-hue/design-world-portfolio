@@ -33,23 +33,23 @@ export const About = () => {
   const features = [
   {
     icon: Award,
-    title: t("about.features.excellence.title"),
-    description: t("about.features.excellence.description"),
+    title: t("features.excellence.title"),
+    description: t("features.excellence.description"),
   },
   {
     icon: Users,
-    title: t("about.features.client.title"),
-    description: t("about.features.client.description"),
+    title: t("features.client.title"),
+    description: t("features.client.description"),
   },
   {
     icon: Zap,
-    title: t("about.features.delivery.title"),
-    description: t("about.features.delivery.description"),
+    title: t("features.delivery.title"),
+    description: t("features.delivery.description"),
   },
   {
     icon: Heart,
-    title: t("about.features.passion.title"),
-    description: t("about.features.passion.description"),
+    title: t("features.passion.title"),
+    description: t("features.passion.description"),
   },
 ];
 
