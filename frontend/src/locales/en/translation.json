@@ -329,37 +329,37 @@
   },
 
    "toast": {
-    "errorTitle": "Missing Information",
-    "errorDescription": "Please fill in all required fields.",
-    "successTitle": "Message Ready",
-    "successDescription": "Opening WhatsApp..."
+  "errorTitle": "Missing Information",
+  "errorDescription": "Please fill in all required fields.",
+  "successTitle": "Message Ready",
+  "successDescription": "Opening WhatsApp..."
+}
+},
+
+"footer": {
+  "description": "Professional Graphic Design, Branding, Packaging, Print Design, Social Media Design and Website Development Services.",
+
+  "quickLinks": "Quick Links",
+  "servicesTitle": "Services",
+  "contactTitle": "Contact",
+
+  "location": "Kharghar, Navi Mumbai, Maharashtra, India",
+
+  "services": {
+    "logo": "Logo Design",
+    "brand": "Brand Identity",
+    "packaging": "Packaging Design",
+    "social": "Social Media Design",
+    "print": "Print Design",
+    "cards": "Business Cards"
   },
 
-  "footer": {
-    "description": "Professional Graphic Design, Branding, Packaging, Print Design, Social Media Design and Website Development Services.",
+  "copyright": "Design World. All Rights Reserved.",
+  "designed": "Designed with",
+  "company": "Design World"
+},
 
-    "quickLinks": "Quick Links",
-    "servicesTitle": "Services",
-    "contactTitle": "Contact",
-
-    "location": "Kharghar, Navi Mumbai, Maharashtra, India",
-
-    "services": {
-      "logo": "Logo Design",
-      "brand": "Brand Identity",
-      "packaging": "Packaging Design",
-      "social": "Social Media Design",
-      "print": "Print Design",
-      "cards": "Business Cards"
-    },
-
-    "copyright": "Design World. All Rights Reserved.",
-    "designed": "Designed with",
-    "company": "Design World"
-  },
-
-  "whatsapp": {
-    "title": "Need Help With Your Design?",
-    "description": "Chat with us on WhatsApp!"
-  }
+"whatsapp": {
+  "title": "Need Help With Your Design?",
+  "description": "Chat with us on WhatsApp!"
 }
