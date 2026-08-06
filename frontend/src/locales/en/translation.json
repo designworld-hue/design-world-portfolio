@@ -61,26 +61,27 @@
   "paragraph9": "that help businesses grow. Whether you're a startup or an established business,",
   "paragraph10": "is committed to transforming your ideas into impactful visual experiences and building a brand that stands out.",
 
-  "features": {
-    "excellence": {
-      "title": "Excellence",
-      "description": "Award-winning designs that stand out"
-    },
-    "client": {
-      "title": "Client-Focused",
-      "description": "Your vision, our expertise"
-    },
-    "delivery": {
-      "title": "Fast Delivery",
-      "description": "Quality work, delivered on time"
-    },
-    "passion": {
-      "title": "Passion",
-      "description": "We love what we do, and it shows"
-    }
+"features": {
+  "excellence": {
+    "title": "Excellence",
+    "description": "Award-winning designs that stand out"
   },
-    
-  "services": {
+  "client": {
+    "title": "Client-Focused",
+    "description": "Your vision, our expertise"
+  },
+  "delivery": {
+    "title": "Fast Delivery",
+    "description": "Quality work, delivered on time"
+  },
+  "passion": {
+    "title": "Passion",
+    "description": "We love what we do, and it shows"
+  }
+}
+},
+
+"services": {
     "badge": "What We Offer",
     "title": "Our Services",
     "description": "Comprehensive design solutions tailored to your business needs",
