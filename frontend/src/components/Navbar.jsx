@@ -56,16 +56,17 @@ const changeLanguage = (lang) => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <motion.a
-          href={WHATSAPP_URL}
-         onClick={() => trackWhatsAppClick("Navbar")}
-         target="_blank"
-         rel="noopener noreferrer"
-         whileHover={{ scale: 1.05 }}
-         whileTap={{ scale: 0.95 }}
-         className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
-         >
-            <img src="/logo.webp" alt="Design World - Complete Design & Printing Solution" className="h-12 w-auto" />
-          </motion.a>
+  href="#home"
+  className="flex items-center space-x-3"
+  whileHover={{ scale: 1.02 }}
+  transition={{ duration: 0.2 }}
+>
+  <img
+    src="/logo.webp"
+    alt="Design World - Complete Design & Printing Solution"
+    className="h-12 w-auto"
+  />
+</motion.a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -121,15 +122,16 @@ const changeLanguage = (lang) => {
   </div>
 
   <motion.a
-    href={WHATSAPP_URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-    className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
-  >
-    {t("navbar.letsTalk")}
-  </motion.a>
+  href={WHATSAPP_URL}
+  onClick={() => trackWhatsAppClick("Navbar")}
+  target="_blank"
+  rel="noopener noreferrer"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+  className="px-6 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white rounded-full font-medium shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 transition-all duration-300"
+>
+  {t("navbar.letsTalk")}
+</motion.a>
 
 </div>
 
